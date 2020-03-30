@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VolumetricFragment"
+    android:background="@color/ash_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp">
+
+        <LinearLayout
+            android:id="@+id/firstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/whiteColor"
+            android:padding="3dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/valueTable"
+                android:gravity="center"
+                android:textColor="@color/blackColor"
+                android:textSize="17sp"
+                android:fontFamily="cursive"
+                android:textStyle="bold"
+                android:layout_marginTop="3dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/blackColor"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/baseField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/VolofB"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="1dp"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/acidConcField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:hint="@string/concOfA"
+                android:layout_marginEnd="20dp"
+                android:inputType="numberDecimal"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/baseConcField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+
+                android:layout_toRightOf="@+id/acidConcField"
+                android:hint="@string/concB"
+                android:layout_marginStart="20dp"
+                android:inputType="numberDecimal"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/molAField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_alignParentStart="true"
+                android:hint="@string/molA"
+                android:inputType="number"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/molBField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/molB"
+                android:inputType="number"
+                android:layout_marginStart="20dp"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/calculateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/molAField"
+                android:text="Generate Table"
+                android:textColor="@color/colorAccent"
+                android:textAllCaps="false"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_alignParentBottom="true"
+
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Final Burette Reading (cm cube)"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginStart="5dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/blackColor"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/whiteColor"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/roughText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Rough"
+                        android:textColor="@color/blackColor" />
+
+                    <TextView
+                        android:id="@+id/firstId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:layout_toEndOf="@id/roughText"
+                        android:text="First"
+                        android:textColor="@color/blackColor" />
+
+                    <TextView
+                        android:id="@+id/secondId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:layout_toEndOf="@id/firstId"
+                        android:text="Second"
+                        android:textColor="@color/blackColor" />
+
+                    <TextView
+                        android:id="@+id/thirdId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toEndOf="@id/secondId"
+                        android:gravity="end"
+                        android:text="Third "
+                        android:textColor="@color/blackColor" />
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Initial  Burette Reading(cm cube)"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginStart="5dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/blackColor"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:background="@color/whiteColor"
+                    >
+
+                    <TextView
+                        android:id="@+id/roughText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rough"
+                        android:textColor="@color/blackColor"
+                        android:layout_alignParentStart="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/firstId2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="33dp"
+                        android:layout_toEndOf="@id/roughText2"
+                        android:text="First"
+                        android:textColor="@color/blackColor" />
+
+                    <TextView
+                        android:id="@+id/secondId2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="44dp"
+                        android:layout_toEndOf="@id/firstId2"
+                        android:text="Second"
+                        android:textColor="@color/blackColor" />
+
+                    <TextView
+                        android:id="@+id/thirdId2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Third"
+                        android:layout_toEndOf="@id/secondId2"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/blackColor"
+                        android:gravity="end"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentEnd="true"/>
+
+
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/blackColor"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:background="@color/whiteColor"
+                    >
+
+                    <TextView
+                        android:id="@+id/roughUsed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vol Of \n A Used:"
+                        android:textColor="@color/colorAccent"
+                        android:layout_alignParentStart="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/firstId2Used"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="27dp"
+                        android:layout_toEndOf="@id/roughUsed"
+                        android:text="First"
+                        android:textColor="@color/blackColor" />
+
+                    <TextView
+                        android:id="@+id/secondId2Used"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="44dp"
+                        android:layout_toEndOf="@id/firstId2Used"
+                        android:text="Second"
+                        android:textColor="@color/blackColor" />
+
+                    <TextView
+                        android:id="@+id/thirdId2Used"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Third"
+                        android:layout_toEndOf="@id/secondId2Used"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/blackColor"
+                        android:gravity="end"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentEnd="true"/>
+
+
+
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/blackColor"
+                    />
+
+                <TextView
+                    android:id="@+id/averageTitre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Average Titre:"
+                    android:textColor="@color/blackColor"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="5dp"/>
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/blackColor"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+</ScrollView>
